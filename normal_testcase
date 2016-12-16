@@ -1,0 +1,16 @@
+Timer unit: 1e-06 s
+
+Total time: 0 s
+File: numpyGP.py
+Function: normal_testcase at line 12
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    12                                           @profile
+    13                                           def normal_testcase():
+    14                                               mu, sigma = 0, 0.1
+    15                                               s = np.random.normal(mu, sigma, 1000)
+    16                                               verify_mean = abs(mu - np.mean(s)) < 0.01
+    17                                               verify_var = abs(sigma - np.std(s, ddof=1)) < 0.01
+    18                                               logger.debug("mean: %f" % abs(mu - np.mean(s)))
+    19                                               logger.debug("variance of data: %f" % abs(sigma - np.std(s, ddof=1)))
